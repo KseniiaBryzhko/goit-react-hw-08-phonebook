@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
-
 import { fetchContacts } from 'redux/contacts/operations';
 import { getError, getIsLoading, getFilter } from 'redux/contacts/selectors';
 import { ContactForm } from 'components/ContactForm/ContactForm';
@@ -27,7 +26,7 @@ export default function Tasks() {
   return (
     <>
       <Helmet>
-        <title>Your tasks</title>
+        <title>Phonebook</title>
       </Helmet>
       <Phonebook>
         <Title>Phonebook</Title>
@@ -41,10 +40,6 @@ export default function Tasks() {
         )) || <ContactList />}
         {error && <Message>Something went wrong. Please try again!</Message>}
       </Phonebook>
-
-      {/* <TaskEditor />
-      <div>{isLoading && 'Request in progress...'}</div>
-      <TaskList /> */}
     </>
   );
 }
