@@ -1,37 +1,68 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { Formik } from 'formik';
+import * as yup from 'yup';
+import {
+  AddContactForm,
+  Label,
+  Input,
+  AddButton,
+  CustomErrorMessage,
+} from 'components/ContactForm/ContactForm.styled.js';
 
 export const RegisterForm = () => {
+  const initialValues = {
+    name: '',
+    email: '',
+    password: '',
+  };
+
+  const validationSchema = yup.object().shape({
+    name: yup
+      .string()
+      .matches(
+        "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
+        'Name may contain only letters, apostrophe, dash and spaces'
+      )
+      .required(),
+    email: yup.string().email('Email must be a valid email').required(),
+    password: yup
+      .string()
+      .min(7, 'Password must contain at least 7 characters')
+      .required(),
+  });
+
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+  const handleSubmit = ({ name, email, password }, action) => {
+    dispatch(register({ name, email, password }));
+    action.resetForm();
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      <AddContactForm autoComplete="off">
+        <Label>
+          Username
+          <Input type="text" name="name" />
+          <CustomErrorMessage name="name" component="div" />
+        </Label>
+        <Label>
+          Email
+          <Input type="email" name="email" />
+          <CustomErrorMessage name="email" component="div" />
+        </Label>
+        <Label>
+          Password
+          <Input type="password" name="password" />
+          <CustomErrorMessage name="password" component="div" />
+        </Label>
+        <AddButton type="submit">Register</AddButton>
+      </AddContactForm>
+    </Formik>
   );
 };
