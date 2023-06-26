@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { fetchContacts } from 'redux/contacts/operations';
 import { getError, getIsLoading, getFilter } from 'redux/contacts/selectors';
 import { ContactForm } from 'components/ContactForm/ContactForm';
@@ -11,7 +10,7 @@ import {
   Title,
   ContactsTitle,
   Message,
-} from 'components/App.styled.js';
+} from 'components/App/App.styled.js';
 
 export default function Tasks() {
   const dispatch = useDispatch();
@@ -25,9 +24,6 @@ export default function Tasks() {
 
   return (
     <>
-      <Helmet>
-        <title>Phonebook</title>
-      </Helmet>
       <Phonebook>
         <Title>Phonebook</Title>
         <ContactForm />
