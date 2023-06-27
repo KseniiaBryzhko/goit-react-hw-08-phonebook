@@ -2,23 +2,22 @@ import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 export const NavigationLink = styled(NavLink)`
-  outline: none;
   padding: 10px 25px;
-  background: transparent;
+  background-color: #e6e3dc;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
   color: #353535;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   font-family: 'Cormorant Garamond', serif;
-  border: 1px solid #d4dae3;
+  text-decoration: none;
   border-radius: 4px;
   z-index: 1;
   position: relative;
-  width: 15vw;
-  margin: 0 auto;
-  margin-top: 10px;
+  margin-right: 10px;
+  box-shadow: -10px -10px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
   &:after {
     position: absolute;
     content: '';
@@ -39,4 +38,8 @@ export const NavigationLink = styled(NavLink)`
     top: 0;
     height: 100%;
   }
+`;
+
+export const NavigationMenu = styled.nav`
+  padding: 12px;
 `;

@@ -21,23 +21,29 @@ export const Container = styled.div`
 export const Title = styled.h1`
   text-align: center;
   color: #353535;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 700;
   font-family: 'Cormorant Garamond', serif;
   line-height: 1.3;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 `;
 
 export const AppName = styled.span`
   color: #363e70;
-  font-size: 38px;
+  font-size: 68px;
 `;
 
 export const Text = styled.p`
   text-align: center;
   color: #353535;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   font-family: 'Cormorant Garamond', serif;
-  margin-top: 30px;
+
   line-height: 1.3;
+  &:not(:last-child) {
+    margin-bottom: 22px;
+  }
 `;

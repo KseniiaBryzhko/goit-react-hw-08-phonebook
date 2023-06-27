@@ -7,7 +7,7 @@ export const AddContactForm = styled(Form)`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  width: 30vw;
+  width: 20vw;
   border-radius: 5px;
   box-shadow: -10px -10px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
     7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;

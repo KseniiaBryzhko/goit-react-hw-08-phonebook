@@ -1,8 +1,21 @@
 import styled from '@emotion/styled';
 
 export const Phonebook = styled.div`
-  padding: 40px;
+  height: 100vh;
+  /* width: 100vw; */
+  padding: 60px;
   font-size: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+`;
+
+export const PhonebookWrapper = styled.div`
+  padding-top: 350px;
+`;
+
+export const ContactsWrapper = styled.div`
+  padding-top: 140px;
 `;
 
 export const Title = styled.h1`

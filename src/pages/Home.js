@@ -5,8 +5,10 @@ export default function Home() {
     <Section>
       <Container>
         <Title>
-          Welcome to the <AppName>Phonebook app</AppName> - an indispensable
-          assistant in organizing your contacts.
+          Welcome to the <AppName>Phonebook app</AppName> an indispensable
+          assistant
+          <br />
+          in organizing your contacts.
         </Title>
         <Text>
           If you are a registered user - log into your account using your email

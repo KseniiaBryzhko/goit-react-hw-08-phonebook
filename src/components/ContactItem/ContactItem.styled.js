@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 export const ListItem = styled.li`
   text-align: center;
   color: #353535;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   font-family: 'Cormorant Garamond', serif;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,13 +17,13 @@ export const ListItem = styled.li`
 
 export const DeleteButton = styled.button`
   outline: none;
-  padding: 10px 25px;
+  padding: 8px 20px;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
   color: #353535;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   font-family: 'Cormorant Garamond', serif;
   border: 1px solid #d4dae3;

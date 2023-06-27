@@ -1,14 +1,15 @@
-import { AuthNavList, StyledNavLink } from './AuthNav.styled';
+import { AuthNavList } from './AuthNav.styled';
+import { NavigationLink } from 'components/Navigation/Navigation.styled.js';
 
 export const AuthNav = () => {
   return (
     <div>
       <AuthNavList>
         <li>
-          <StyledNavLink to="/register">Register</StyledNavLink>
+          <NavigationLink to="/register">Register</NavigationLink>
         </li>
         <li>
-          <StyledNavLink to="/login">Log in</StyledNavLink>
+          <NavigationLink to="/login">Log in</NavigationLink>
         </li>
       </AuthNavList>
     </div>

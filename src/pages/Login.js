@@ -1,9 +1,10 @@
 import { LoginForm } from 'components/LoginForm/LoginForm';
+import { Section } from 'pages/Home.styled.js';
 
 export default function Login() {
   return (
-    <div>
+    <Section>
       <LoginForm />
-    </div>
+    </Section>
   );
 }

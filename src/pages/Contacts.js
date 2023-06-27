@@ -7,10 +7,14 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import {
   Phonebook,
+  PhonebookWrapper,
+  ContactsWrapper,
   Title,
   ContactsTitle,
   Message,
 } from 'components/App/App.styled.js';
+
+// import { Section, Container } from 'pages/Home.styled.js';
 
 export default function Tasks() {
   const dispatch = useDispatch();
@@ -23,10 +27,12 @@ export default function Tasks() {
   }, [dispatch]);
 
   return (
-    <>
-      <Phonebook>
+    <Phonebook>
+      <PhonebookWrapper>
         <Title>Phonebook</Title>
         <ContactForm />
+      </PhonebookWrapper>
+      <ContactsWrapper>
         <ContactsTitle>Contacts</ContactsTitle>
         <Filter value={filter}></Filter>{' '}
         {(isLoading && !error && (
@@ -35,7 +41,7 @@ export default function Tasks() {
           </>
         )) || <ContactList />}
         {error && <Message>Something went wrong. Please try again!</Message>}
-      </Phonebook>
-    </>
+      </ContactsWrapper>
+    </Phonebook>
   );
 }
